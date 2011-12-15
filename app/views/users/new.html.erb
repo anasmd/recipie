@@ -1,0 +1,29 @@
+<div id="reg_form" style="display:none;">
+<%= form_for @user, :method => :post do|f| %>
+  <ul>
+    <li>
+      <label>Login:</label>
+      <%=f.text_field :login, :maxlength => 20 %>
+    </li>
+    <li>
+      <label>Email: </label>
+      <%= f.text_field :email %>
+    </li>
+    <li>
+      <label>Password:</label>
+      <%=f.password_field :password %>
+    </li>
+    <li>
+      <label>Password Confirmation: </label>
+      <%= f.password_field :confirm_password %>
+    </li>
+    <li>
+    <span><%=f.check_box :confirm_msg %>
+     Agreed for terms and conditions
+    </li>
+    <li>
+      <%= f.submit "Create" %>
+    </li>
+  </ul>      
+<% end %>
+</div>
