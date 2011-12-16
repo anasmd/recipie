@@ -6,10 +6,23 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require rails.validations
 //= require_tree .
-$(document).ready(function(){
+/*$(document).ready(function(){
   $('#register').click(function(){
-  alert('hi') 
-    $('#reg_form').dialog();
+    $('#reg_form').dialog({
+     open: $.ajax({
+          beforeSend: function(){ $('#reg_form').html("loading"); },
+          url: "/users/new",
+          type: 'GET',
+          success: function(data){
+                    $('#reg_form').html(data)
+                   }
+      
+          }),
+    height: 500,
+    width: 500,
+    modal: true
+    });
    });
-});
+});*/
