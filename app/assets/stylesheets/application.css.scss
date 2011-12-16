@@ -29,5 +29,14 @@
     a {text-decoration: none;
       &:visited {color: #fff;}
 	}
+    label {display : block;
+	padding: 10px 0px;
+	}
+    input { width: 250px;}
     }  
+}
+.field_with_errors {
+    background-color: red;
+    display: table;
+    padding: 2px;
 }

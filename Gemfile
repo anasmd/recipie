@@ -17,6 +17,8 @@ end
 
 gem 'jquery-rails'
 gem 'sqlite3'
+gem 'client_side_validations'
+
 group :development do
   gem "execjs"
   gem "therubyracer"

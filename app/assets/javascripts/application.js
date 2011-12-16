@@ -8,21 +8,23 @@
 //= require jquery_ujs
 //= require rails.validations
 //= require_tree .
-/*$(document).ready(function(){
-  $('#register').click(function(){
-    $('#reg_form').dialog({
-     open: $.ajax({
-          beforeSend: function(){ $('#reg_form').html("loading"); },
-          url: "/users/new",
-          type: 'GET',
-          success: function(data){
-                    $('#reg_form').html(data)
-                   }
-      
-          }),
-    height: 500,
-    width: 500,
-    modal: true
-    });
-   });
-});*/
+
+$(document).ready(function(){
+    $('#register').click(function(){
+      $('#reg_form').dialog({
+      open: $.ajax({
+            beforeSend: function(){ $('#reg_form').html("loading"); },
+           url: "/users/new",
+           type: 'GET',
+           success: function(data){
+                     $('#reg_form').html(data)
+                     }
+       
+            }),
+      height: 600,
+      width: 600,
+      modal: true
+     });
+     });
+  });
+
