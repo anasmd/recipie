@@ -21,9 +21,14 @@ $(document).ready(function(){
                      }
        
             }),
+      close: function(event, ui){
+              $('.popup').fadeOut('slow');
+              },
+      dialogClass: 'popup',
       height: 600,
-      width: 600,
-      modal: true
+      width: 650,
+      modal: true,
+      hide: "slideUp"
      });
      });
   });
