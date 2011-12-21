@@ -1,5 +1,7 @@
 Myrecipie::Application.routes.draw do
-  resources :users
+  root :to => "users#index"
+  devise_for :users
+  #resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
