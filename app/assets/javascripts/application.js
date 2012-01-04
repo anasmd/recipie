@@ -14,7 +14,7 @@ $(document).ready(function(){
       $('#reg_form').dialog({
       open: $.ajax({
             beforeSend: function(){ $('#reg_form').html("loading"); },
-           url: "/users/new",
+           url: "/users/sign_up",
            type: 'GET',
            success: function(data){
                      $('#reg_form').html(data)
@@ -24,9 +24,10 @@ $(document).ready(function(){
       close: function(event, ui){
               $('.popup').fadeOut('slow');
               },
+      title: "Free Sign up !!!",
       dialogClass: 'popup',
-      height: 600,
-      width: 650,
+      height: 450,
+      width: 450,
       modal: true,
       hide: "slideUp"
      });

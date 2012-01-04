@@ -19,6 +19,8 @@ gem 'jquery-rails'
 gem 'sqlite3'
 gem 'client_side_validations'
 gem "devise"
+gem "omniauth-facebook"
+
 group :development do
   gem "execjs"
   gem "therubyracer"

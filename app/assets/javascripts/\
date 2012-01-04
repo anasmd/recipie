@@ -5,10 +5,7 @@
  *= require_self
  *= require_tree . 
 */
-body {
- font-size: 15px;
- font-family: tahoma;
-}
+
 #recipie_header{
   background-color: #577E3E;
   width: 99%;
@@ -41,30 +38,29 @@ body {
 	li > label.message { display: inline-block;}
 	
 }
-#user_new ul {
+#reg_form ul {
 	padding: 0px;
   li.submit_btn {
-    input[type=submit] { 
-	background-color: #577E3E;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+    input[type=submit] { background-color: #577E3E;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
         float: right;
-	margin-right: 100px;
-        width: 100px;
-	}
-	}
+				margin-right: 100px;
+        width: 200px;
+			}
+		}
 	li{
-    padding: 5px;
+    padding: 10px;
 		width: 98%;
-		height: 50px;
+		height: 40px;
 		list-style: none;
     span.msg {display: inline-block; color: #577E3E; vertical-align: 5px;}
   		label { 
   			display: block;
-				margin-bottom: 5px;
+				margin-bottom: 10px;
 				font-weight: bold;
   	}
-		input {width: 200px;
+		input {width: 250px;
 			border: 1px solid #577E3E;
 		}
   label.message {
@@ -85,7 +81,7 @@ body {
 		border: 1px solid #577E3E;
 	}
 }
-.field_with_errors {
-    display: table;
+field_with_errors {
+    display: none;
     padding: 0px;
 }
