@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120104132234) do
   end
 
   create_table "ingredients", :force => true do |t|
+    t.integer  "recipy_id"
     t.string   "name"
     t.integer  "quantity"
     t.string   "measure"

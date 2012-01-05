@@ -1,0 +1,9 @@
+// Place all the styles related to the recipies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#nested_form ul li{
+ list-style: none;
+ input[type=text], textarea { width: 100px;}
+ textarea {height: 30px}
+}

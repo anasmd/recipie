@@ -20,7 +20,7 @@ gem 'sqlite3'
 gem 'client_side_validations'
 gem "devise"
 gem "omniauth-facebook"
-
+gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
 group :development do
   gem "execjs"
   gem "therubyracer"
