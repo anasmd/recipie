@@ -11,13 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104132234) do
+ActiveRecord::Schema.define(:version => 20120106121243) do
 
   create_table "cuisines", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "images", :force => true do |t|
+    t.string   "file"
+    t.string   "attachable_type"
+    t.integer  "attachable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["attachable_id"], :name => "index_images_on_attachable_id"
+  add_index "images", ["attachable_type"], :name => "index_images_on_attachable_type"
 
   create_table "ingredients", :force => true do |t|
     t.integer  "recipy_id"

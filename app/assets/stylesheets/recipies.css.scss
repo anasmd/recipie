@@ -2,8 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#nested_form ul li{
- list-style: none;
- input[type=text], textarea { width: 100px;}
- textarea {height: 30px}
+#nested_form ul { 
+  margin-top: 10px;
+  margin: 30px 150px;
+  width: 70%;
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+    span {display: inline-block;
+    padding-right: 10px;
+    text-align: right;
+    &:last-child { width: 50px;}
+    }
+   input[type=text], input[type=file], span, textarea {width: 150px;}
+   textarea{height: 30px;}
+  }
+  li.text{ textarea { width: 472px; height: 50px;}
+    span {vertical-align: top; margin-top: 20px;}
+  }
+  li.header { 
+    border-top: 1px sold #ccc;
+    border-bottom: 1px solid #ccc;
+    span{text-align: center;} }
+  li.left {
+   float: left;
+  }
 }

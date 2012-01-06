@@ -1,81 +1,77 @@
-<%= nested_form_for(@recipy, :html => {:id => "nested_form"}) do |f| %>
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.remove_nested_fields').each(function(){
+      jQuery(this).html('<img src="/assets/remove.png"  border="0" />')
+    })
+    jQuery('.add_nested_fields').each(function(){
+      jQuery(this).html('<img src="/assets/add.png"  border="0" />')
+    })
+  });
+</script>
+<%= nested_form_for(@recipy, :html => {:multipart => true ,:id => "nested_form"}) do |f| %>
   <ul>
-    <li>
-      <%= f.label :title %>
+    <li class="left">
+      <span><%= f.label :title %></span>
       <%= f.text_field :title %>
     </li>
-    <li>
-      <table>
-        <thead>
-          <tr>
-            <th>Qunatity</th>
-            <th>Measure</th>
-            <th>Ingredien</th>
-            <th>Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= f.fields_for :ingredients do |ingredient_form| %>
-            <tr class="fields">
-              <td>
-                <%= ingredient_form.text_field :quantity %>
-              </td>
-              <td>
-                <%= ingredient_form.text_field :measure %>
-              </td>
-              <td>
-                <%= ingredient_form.text_field :name %>
-              </td>
-              <td>
-                <%= ingredient_form.text_area :notes, :rows => 2, :cols => 10 %>
-              </td>
-              <td><%= ingredient_form.link_to_remove "Remove" %></td>
-            </tr>
-          <% end %>
-          <tr>
-            <td colspan="6">
-            <%= f.link_to_add "Add", :ingredients %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <li class="left">
+      <span><%= f.label :file %></span>
+      <%= f.file_field :file %>
     </li>
-    <li>
-      <%=f.label :directions%>
-      <%= f.text_area :directions , :col => 15, :rows => 5%>
+    <li class="header">
+      <span>Qunatity</span>
+      <span>Measure</span>
+      <span>Ingredient</span>
+      <span>Notes</span>
     </li>
-    <li>
-      <%= f.label :preperation_time %>
+    <%= f.fields_for :ingredients do |ingredient_form| %>
+      <li class="fields">
+        <span><%= ingredient_form.text_field :quantity %></span>
+        <span><%= ingredient_form.text_field :measure %></span>
+        <span><%= ingredient_form.text_field :name %></span>
+        <span><%= ingredient_form.text_area :notes %></span>
+        <span><%= ingredient_form.link_to_remove "Remove" %></span>
+      </li>
+    <% end %>
+    <li><%= f.link_to_add "Add", :ingredients %></li>
+    <li class="text">
+      <span><%=f.label :directions%></span>
+      <%= f.text_area :directions %>
+    </li>
+    <li class="left">
+      <span><%= f.label :preperation_time %></span>
       <%= f.text_field :preperation_time %>
     </li>
-    <li>
-      <%= f.label :cooking_time %>
+    <li class="left">
+      <span><%= f.label :cooking_time %></span>
       <%= f.text_field :cooking_time %>
     </li>
-    <li>
-      <%= f.label :serving_size %>
-      <%= f.text_field :serving_size, :col => 15, :rows => 5%>
+
+    <li class="left">
+      <span><%= f.label :serving_size %></span>
+      <%= f.text_field :serving_size%>
     </li>
-    <li>
-      <%= f.label :story %>
-      <%= f.text_area :story , :col => 15, :rows => 5%>
-    </li>
-    <li>
-      <%= f.label :course %>
-      <%= f.text_field :course %>
-    </li>
-    <li>
-      <%= f.label :cusisine_id %>
+    <li class="left">
+      <span><%= f.label :cusisine_id %></span>
       <%= f.text_field :cusisine_id %>
     </li>
-    <li>
-      <%= f.label :occasion %>
+
+    <li class="text">
+      <span><%= f.label :story %></span>
+      <%= f.text_area :story %>
+    </li>
+    <li class="left">
+      <span><%= f.label :course %></span>
+      <%= f.text_field :course %>
+    </li>
+    <li class="left">
+      <span><%= f.label :occasion %></span>
       <%= f.text_field :occasion %>
     </li>
     <li>
-      <%= f.label :favourate %>
+      <span><%= f.label :favourate %></span>
       <%= f.check_box :favourate %>
     </li>
-  <%# end %>
+    <li><%= f.submit "Save Recipie" %></li>
   </ul>
 <% end %>
