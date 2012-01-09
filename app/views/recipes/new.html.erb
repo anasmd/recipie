@@ -8,16 +8,18 @@
     })
   });
 </script>
-<%= nested_form_for(@recipy, :html => {:multipart => true ,:id => "nested_form"}) do |f| %>
+<%= nested_form_for(@recipe, :html => {:multipart => true ,:id => "nested_form"}) do |f| %>
   <ul>
     <li class="left">
       <span><%= f.label :title %></span>
       <%= f.text_field :title %>
     </li>
-    <li class="left">
-      <span><%= f.label :file %></span>
-      <%= f.file_field :file %>
-    </li>
+    <%= f.fields_for :image do |image_form| %>
+      <li class="left">
+        <span><%= image_form.label :file %></span>
+        <%= image_form.file_field :file %>
+      </li>
+    <% end %>
     <li class="header">
       <span>Qunatity</span>
       <span>Measure</span>
@@ -75,3 +77,5 @@
     <li><%= f.submit "Save Recipie" %></li>
   </ul>
 <% end %>
+
+<%#*"recipy"=>{"title"=>"", "image_attributes"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x9756648 @original_filename="add.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"recipy[image_attributes][file]\"; filename=\"add.png\"\r\nContent-Type: image/png\r\n", @tempfile=#<File:/tmp/RackMultipart20120109-5305-7ajthg>>} }%>

@@ -22,6 +22,7 @@ gem "devise"
 gem "omniauth-facebook"
 gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
 gem 'carrierwave'
+gem "rmagick", "~> 2.13.1"
 group :development do
   gem "execjs"
   gem "therubyracer"

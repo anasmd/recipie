@@ -1,8 +1,8 @@
-// Place all the styles related to the recipies controller here.
+// Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#nested_form ul { 
+#nested_form ul {
   margin-top: 10px;
   margin: 30px 150px;
   width: 70%;
@@ -20,7 +20,7 @@
   li.text{ textarea { width: 472px; height: 50px;}
     span {vertical-align: top; margin-top: 20px;}
   }
-  li.header { 
+  li.header {
     border-top: 1px sold #ccc;
     border-bottom: 1px solid #ccc;
     span{text-align: center;} }

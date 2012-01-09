@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   #attr_accessor :confirm_password, :confirm_msg
   attr_accessible :username, :login, :login, :email, :password, :password_confirmation
   attr_accessor :login
-  validates :email, :password, :password_confirmation, :presence => true
+  validates :email, :password, :presence => true
   validates :email, :uniqueness => true, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
 
   def self.find_for_database_authentication(warden_conditions)

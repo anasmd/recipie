@@ -2,7 +2,7 @@ Myrecipie::Application.routes.draw do
   root :to => "users#index"
   devise_for :users, :controllers => { :sessions => "sessions" , :registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :cuisines
-  resources :recipies
+  resources :recipes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,4 +1,5 @@
 class Image < ActiveRecord::Base
-  belongs_to :attachable, :polymorphic => true
   mount_uploader :file, FileUploader
+  belongs_to :attachable, :polymorphic => true
+  attr_accessible :file
 end
