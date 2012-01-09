@@ -1,0 +1,10 @@
+<%@recipes.each do |recipe|%>
+  <h2><%= recipe.title %></h2>
+  <div><%= image_tag(recipe.image.file_url) if recipe.image %></div>
+  <h3>Ingredients</h3>
+  <ul>
+    <%recipe.ingredients.each do |ingredient|%>
+      <li><%=ingredient.name%></li>
+    <% end %>
+  </ul>
+<% end %>

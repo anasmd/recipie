@@ -17,10 +17,10 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  # def default_url
-  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-  # end
-  process :resize_to_fit => [400, 400]
+   def default_url
+     "/images/" + [version_name, "rails.png"].compact.join('_')
+   end
+  process :resize_to_fit => [300, 300]
 
   # Process files as they are uploaded:
 #   process :scale => [200, 300]

@@ -10,27 +10,33 @@
 //= require_tree .
 
 $(document).ready(function(){
-    $('#register').click(function(){
-      $('#reg_form').dialog({
+ 
+// Hint functionality
+  $('.hint').inputHints();
+  
+  $('#register').click(function(){
+    $('#reg_form').dialog({
       open: $.ajax({
-            beforeSend: function(){ $('#reg_form').html("loading"); },
-           url: "/users/sign_up",
-           type: 'GET',
-           success: function(data){
-                     $('#reg_form').html(data)
-                     }
+        beforeSend: function(){
+          $('#reg_form').html("loading");
+        },
+        url: "/users/sign_up",
+        type: 'GET',
+        success: function(data){
+          $('#reg_form').html(data)
+        }
        
-            }),
+      }),
       close: function(event, ui){
-              $('.popup').fadeOut('slow');
-              },
+        $('.popup').fadeOut('slow');
+      },
       title: "Free Sign up !!!",
       dialogClass: 'popup',
       height: 450,
       width: 450,
       modal: true,
       hide: "slideUp"
-     });
-     });
+    });
   });
+});
 

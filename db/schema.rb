@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120106121243) do
+ActiveRecord::Schema.define(:version => 20120109132911) do
 
   create_table "cuisines", :force => true do |t|
     t.string   "name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20120106121243) do
   add_index "images", ["attachable_type"], :name => "index_images_on_attachable_type"
 
   create_table "ingredients", :force => true do |t|
-    t.integer  "recipy_id"
+    t.integer  "recipe_id"
     t.string   "name"
     t.integer  "quantity"
     t.string   "measure"
@@ -40,7 +40,8 @@ ActiveRecord::Schema.define(:version => 20120106121243) do
     t.datetime "updated_at"
   end
 
-  create_table "recipies", :force => true do |t|
+  create_table "recipes", :force => true do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.text     "directions"
     t.string   "preperation_time"
@@ -48,11 +49,11 @@ ActiveRecord::Schema.define(:version => 20120106121243) do
     t.decimal  "serving_size",     :precision => 10, :scale => 0
     t.text     "story"
     t.string   "course"
-    t.integer  "cusisine_id"
     t.string   "occasion"
     t.boolean  "favourate",                                       :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cuisine_id"
   end
 
   create_table "users", :force => true do |t|

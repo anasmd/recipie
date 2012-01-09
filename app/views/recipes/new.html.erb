@@ -12,7 +12,7 @@
   <ul>
     <li class="left">
       <span><%= f.label :title %></span>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, :title => "Recipe Title", :class => "hint" %>
     </li>
     <%= f.fields_for :image do |image_form| %>
       <li class="left">
@@ -28,10 +28,10 @@
     </li>
     <%= f.fields_for :ingredients do |ingredient_form| %>
       <li class="fields">
-        <span><%= ingredient_form.text_field :quantity %></span>
-        <span><%= ingredient_form.text_field :measure %></span>
-        <span><%= ingredient_form.text_field :name %></span>
-        <span><%= ingredient_form.text_area :notes %></span>
+        <span><%= ingredient_form.text_field :quantity, :title => " 1 2 5 table spoons", :class => "hint" %></span>
+        <span><%= ingredient_form.text_field :measure, :title => "pound or grams", :class => "hint" %></span>
+        <span><%= ingredient_form.text_field :name, :title => "cheese butter", :class => "hint" %></span>
+        <span><%= ingredient_form.text_area :notes, :title => " ingredient preperation", :class => "hint" %></span>
         <span><%= ingredient_form.link_to_remove "Remove" %></span>
       </li>
     <% end %>
@@ -41,21 +41,22 @@
       <%= f.text_area :directions %>
     </li>
     <li class="left">
-      <span><%= f.label :preperation_time %></span>
-      <%= f.text_field :preperation_time %>
+      <span><%= f.label :preperation_time%></span>
+      <%= f.text_field :preperation_time, :title => " 15 30 mins", :class => "hint"  %>
     </li>
     <li class="left">
       <span><%= f.label :cooking_time %></span>
-      <%= f.text_field :cooking_time %>
+      <%= f.text_field :cooking_time, :title => " 15 30 mins", :class => "hint" %>
     </li>
 
     <li class="left">
       <span><%= f.label :serving_size %></span>
-      <%= f.text_field :serving_size%>
+      <%= f.text_field :serving_size, :title => "4 5 8 8.5", :class => "hint" %>
     </li>
     <li class="left">
       <span><%= f.label :cusisine_id %></span>
-      <%= f.text_field :cusisine_id %>
+      <%= f.collection_select(:cuisine_id, Cuisine.all, :id, :name, :prompt => 'Select Cuisine') %>
+
     </li>
 
     <li class="text">
@@ -64,11 +65,11 @@
     </li>
     <li class="left">
       <span><%= f.label :course %></span>
-      <%= f.text_field :course %>
+      <%= f.text_field :course, :title => "Breakfast Dinner", :class => "hint"  %>
     </li>
     <li class="left">
       <span><%= f.label :occasion %></span>
-      <%= f.text_field :occasion %>
+      <%= f.text_field :occasion, :title => "Festival", :class => "hint"  %>
     </li>
     <li>
       <span><%= f.label :favourate %></span>
