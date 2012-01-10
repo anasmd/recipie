@@ -28,3 +28,23 @@
    float: left;
   }
 }
+
+#recipe{
+  width: 70%;
+  .title span:first-child:before{content: url("recipe_icon.gif")}
+    .info {
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      ul li {
+        list-style: none;
+        display : inline-block;
+        padding: 0px 10px;
+        border-right: 1px solid #ccc;
+        &:last-child{ border : none; }
+      }
+    }
+  }
+ .left {float: left;
+      width: 50%;
+      }
+.textarea { width: 472px; height: 50px;}

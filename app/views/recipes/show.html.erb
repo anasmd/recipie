@@ -1,0 +1,38 @@
+<div id ="recipe">
+  <div class="title">
+    <span>Recipe:</span>
+    <span><%= @recipe.title%></span>
+  </div>
+  <div class="info">
+    <ul>
+      <li><span>Prep Time:</span><span><%= @recipe.preperation_time %> </span></li>
+      <li><span>Cook Time:</span><span><%= @recipe.cooking_time %></span></li>
+      <li><span>Serv Size:</span><span><%= @recipe.serving_size %></span></li>
+      <li><span>Course:</span><span><%= @recipe.course %></span></li>
+    </ul>
+  </div>
+  <div class="details">
+    <div class="left">
+      <h3>Ingredients</h3>
+      <ul class="ingredients">
+        <% @recipe.ingredients.each do|ingredient| %> 
+          <li>
+            <span><%=ingredient.quantity %></span>
+            <span><%=ingredient.measure %></span>
+            <span><%=ingredient.name %></span>
+            <span><%=ingredient.notes %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="left">
+      <%= image_tag(@recipe.image.file_url) if @recipe.image %>
+    </div>
+    <div class="directions">
+      <%=@recipe.directions%>
+    </div>
+  </div>
+  <h2>Comments</h2>
+  <%#= render "comments/list" %>
+  <%= render "comments/form" %>
+ </div>
