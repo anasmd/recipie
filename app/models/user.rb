@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable
+  has_many :comments
   #attr_accessor :confirm_password, :confirm_msg
   attr_accessible :username, :login, :login, :email, :password, :password_confirmation
   attr_accessor :login
