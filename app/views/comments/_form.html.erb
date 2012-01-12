@@ -1,5 +1,5 @@
-<%= form_for([@recipe, @comment], :validate => true) do |f| %>
+<%= form_for([@recipe, @comment], :validate => true, :remote => true) do |f| %>
   <p><%=f.label :comment%><br/> 
     <%= f.text_area:comment, :class => "textarea" %></p>
-  <p><%=f.submit "Save Comment"%></p>
+  <p><%=f.submit "Save Comment"%><span id="loading"></span></p>
 <% end %>
