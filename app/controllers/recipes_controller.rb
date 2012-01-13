@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  
+  before_filter :authenticate_user!
   def index
     @recipes = Recipe.find(:all, :include => [:ingredients, :image])
   end
@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find params[:id]
     @comments = @recipe.comments.all
-    @comment = @recipe.comments.build
+    @comment = Comment.new
   end
   
   def new
@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
   end
   
   def create
-    @recipe = Recipe.new(params[:recipe])
+    @recipe = current_user.recipes.new(params[:recipe])
     @recipe.save
     redirect_to recipes_path
   end
@@ -30,5 +30,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find params[:id]
     @recipe.update_attributes(params[:recipe])
     redirect_to @recipe
+  end
+  
+  def destroy
+    
   end
 end

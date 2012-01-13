@@ -1,0 +1,2 @@
+$('li#<%=@comment.id%>').remove();
+$("h2.comments_count").html('<%= pluralize @recipe.comments.length, 'comment' %>')

@@ -1,6 +1,6 @@
 <ul class="comments">
 <% for comment in @comments %>
-  <li><span><%=comment.comment %></span><span class="actions"> <%=  link_to image_tag("delete.png", :border => "0"), recipe_comment_path(@recipe, comment), :method => "delete", :confirm => "Are you sure?" unless comment.user != current_user%>
+  <li id="<%=comment.id%>"> <span><%=comment.comment %></span><span class="actions"> <%=  link_to image_tag("delete.png", :border => "0"), recipe_comment_path(@recipe, comment), :method => "delete", :confirm => "Are you sure?", :remote => true unless comment.user != current_user%>
 </span></li>
 <% end %>
 </ul>

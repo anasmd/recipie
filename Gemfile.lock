@@ -38,6 +38,7 @@ GEM
       multi_json (~> 1.0)
     acts_as_commentable (3.0.1)
     addressable (2.2.6)
+    ajaxful_rating (2.2.9)
     ansi (1.4.1)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
@@ -152,6 +153,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_commentable (~> 3.0.1)
+  ajaxful_rating
   carrierwave
   client_side_validations
   coffee-rails (~> 3.1.0)

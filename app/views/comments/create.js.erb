@@ -1,2 +1,3 @@
-$('ul.comments').append('<li> <span> <%= @comment.comment %> </span> <span class=actions> <%= link_to image_tag("delete.png", :border => "0"), recipe_comment_path(@recipe, @comment), :method => "delete", :confirm => "Are you sure?" unless @comment.user != current_user %> </span> </li> ')
+$('ul.comments').append('<li id= <%=@comment.id %> <span> <%= @comment.comment %> </span> <span class=actions> <%= link_to image_tag("delete.png", :border => "0"), recipe_comment_path(@recipe, @comment), :method => "delete", :confirm => "Are you sure?", :remote => true unless @comment.user != current_user %> </span> </li> ')
 $("#comment_comment").val('');
+$("h2.comments_count").html('<%= pluralize @recipe.comments.length, 'comment' %>')

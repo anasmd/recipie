@@ -32,7 +32,7 @@
       <%=@recipe.directions%>
     </div>
   </div>
-  <h2>Comments</h2>
+  <h2 class="comments_count"><%= pluralize @recipe.comments.length, 'comment' %></h2>
   <%= render "comments/list" %>
   <%= render "comments/form" %>
  </div>
