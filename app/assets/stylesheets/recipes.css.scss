@@ -48,3 +48,19 @@
       width: 50%;
       }
 .textarea { width: 472px; height: 50px;}
+
+/* Tiny Carousel */
+#slider1 { height: 1%; overflow:hidden; padding: 0 0 10px;   }
+#slider1 .viewport { float: left; width: 680px; height: 600px; overflow: hidden; position: relative; }
+#slider1 .buttons { background:url("carousel/buttons.png") no-repeat scroll 0 0 transparent; display: block; margin: 30px 10px 0 0; background-position: 0 -38px; text-indent: -999em; float: left; width: 39px; height: 37px; overflow: hidden; position: relative; }
+#slider1 .next { background-position: 0 0; margin: 30px 0 0 10px;  }
+#slider1 .disable { visibility: hidden; }
+#slider1 .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: 240px; left: 0; top: 0; }
+#slider1 .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 400px; border: 1px solid #dcdcdc; width: 660px;}
+#slider1 ul.recipe_info  li { display: inlne-block;
+                             padding:5px;
+                             height:20px; 
+                             list-style: none;
+                             width: 100px;
+                             border:none;}
+.clear {clear: both;}

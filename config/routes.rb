@@ -3,6 +3,9 @@ Myrecipie::Application.routes.draw do
   devise_for :users, :controllers => { :sessions => "sessions" , :registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :cuisines
   resources :recipes do
+    member do
+      post :rate
+    end
     resources :comments
   end
   # The priority is based upon order of creation:

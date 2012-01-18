@@ -35,4 +35,8 @@ class RecipesController < ApplicationController
   def destroy
     
   end
+  
+  def rate
+    
+  end
 end

@@ -7,9 +7,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails.validations
+//= require jquery.tinycarousel.min
 //= require_tree .
 
 $(document).ready(function(){
+  	$('#slider1').tinycarousel();	
  
 // Hint functionality
   $('.hint').inputHints();

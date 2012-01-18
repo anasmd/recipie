@@ -1,4 +1,4 @@
-class AddCommentsCountToRecipe < ActiveRecord::Migration
+ class AddCommentsCountToRecipe < ActiveRecord::Migration
   def change
     add_column :recipes, :comments_count, :integer, :default => 0
     Recipe.reset_column_information

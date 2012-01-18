@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/mreinsch/acts_as_rateable.git
+  revision: 5cb5b13f618d177f8a963a2514421cdd7e6aa442
+  specs:
+    acts_as_rateable (2.0.1)
+
+GIT
   remote: git://github.com/ryanb/nested_form.git
   revision: 57f32788f1952bcd633057b4b56b69b51df17610
   specs:
@@ -38,7 +44,6 @@ GEM
       multi_json (~> 1.0)
     acts_as_commentable (3.0.1)
     addressable (2.2.6)
-    ajaxful_rating (2.2.9)
     ansi (1.4.1)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
@@ -153,7 +158,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_commentable (~> 3.0.1)
-  ajaxful_rating
+  acts_as_rateable!
   carrierwave
   client_side_validations
   coffee-rails (~> 3.1.0)

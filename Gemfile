@@ -24,7 +24,7 @@ gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
 gem 'carrierwave'
 gem "rmagick", "~> 2.13.1"
 gem "acts_as_commentable", "~> 3.0.1"
-gem "ajaxful_rating"
+gem 'acts_as_rateable', :git => 'git://github.com/mreinsch/acts_as_rateable.git'
 group :development do
   gem "execjs"
   gem "therubyracer"

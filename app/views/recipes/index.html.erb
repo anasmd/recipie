@@ -1,10 +1,39 @@
-<%@recipes.each do |recipe|%>
-  <h2><%= link_to recipe.title, recipe_path(recipe) %></h2>
-  <div><%= image_tag(recipe.image.file_url) if recipe.image %></div>
-  <h3>Ingredients</h3>
-  <ul>
-    <%recipe.ingredients.each do |ingredient|%>
-      <li><%=ingredient.name%></li>
-    <% end %>
-  </ul>
-<% end %>
+
+<div id="slider1">
+  <a class="buttons prev" href="#">left</a>
+  <div class="viewport">
+    <ul class="overview">
+      <%@recipes.each do |recipe|%>
+        <li>
+          <h2><%= recipe.title %> </h2>
+          <ul class="recipe_info">
+            <li><span>Prep Time:</span><span><%= recipe.preperation_time %> </span></li>
+            <li><span>Cook Time:</span><span><%= recipe.cooking_time %></span></li>
+            <li><span>Serv Size:</span><span><%= recipe.serving_size %></span></li>
+            <li><span>Course:</span><span><%= recipe.course %></span></li>
+          </ul>
+          <div class="left recipe_image">
+            <%=  link_to image_tag(recipe.image.file_url), recipe if recipe.image %>
+          </div>
+          <div class="left recipe_ingredients">
+            <table>
+              <tr><td>review </td><td></td></tr>
+              <tr><td>Comments</td><td><%= recipe.comments_count %></td></tr>
+
+            </table>
+            <h2>Ingredients</h2>
+            <%recipe.ingredients.each do |ingredient|%>
+              <p><%=ingredient.name%></p>
+            <% end %>
+          </div>
+          <div class="clear"></div>
+          <div class="directions">
+            <%=recipe.directions%>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <a class="buttons next" href="#">right</a>
+</div>
+
