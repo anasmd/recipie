@@ -64,5 +64,11 @@
     <span><%= f.label :favourate %></span>
     <%= f.check_box :favourate %>
   </li>
+  <li>
+    <%= f.fields_for :tags do |t| %>
+      <span><%= t.label :name%></span>
+      <%= t.text_field :name, :id=> "recipe_tag", :class => "tags" %>
+    <% end %>
+  </li>
   <li><%= f.submit "Save Recipie" %></li>
 </ul>

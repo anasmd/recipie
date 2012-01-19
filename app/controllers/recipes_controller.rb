@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
   
   def create
     @recipe = current_user.recipes.new(params[:recipe])
+    @recipe.tags << params[:recipe][:tags]
     @recipe.save
     redirect_to recipes_path
   end

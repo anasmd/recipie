@@ -8,6 +8,7 @@
 //= require jquery_ujs
 //= require rails.validations
 //= require jquery.tinycarousel.min
+//= require superbly-tagfield.min
 //= require_tree .
 
 $(document).ready(function(){
