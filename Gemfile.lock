@@ -42,6 +42,8 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.2.2)
+      rails (~> 3.0)
     acts_as_commentable (3.0.1)
     addressable (2.2.6)
     ansi (1.4.1)
@@ -157,6 +159,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 2.2.2)
   acts_as_commentable (~> 3.0.1)
   acts_as_rateable!
   carrierwave

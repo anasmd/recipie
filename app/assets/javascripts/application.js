@@ -13,6 +13,12 @@
 
 $(document).ready(function(){
   	$('#slider1').tinycarousel();	
+    $("#recipe_tag").superblyTagField({
+                allowedTagsNumber: 5,
+                showTagsNumber: 5,
+                tags: ['Alfa Romeo','Aston Martin','Audi','Bentley','Bugatti']
+            });
+
  
 // Hint functionality
   $('.hint').inputHints();

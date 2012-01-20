@@ -1,12 +1,16 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :confirmable
   devise :omniauthable
   has_many :recipes
   has_many :comments
   #attr_accessor :confirm_password, :confirm_msg
-  attr_accessible :username, :login, :login, :email, :password, :password_confirmation
+  attr_accessible :username, :login, :login, :email, :password, :password_confirmation, :remember_me
   attr_accessor :login
-  validates :email, :password, :presence => true
+#  validates :password_confirmation, :confirmation => true
+
+  validates :email, :password, :password_confirmation, :presence => true
+  validates :password, :confirmation => true, :unless => Proc.new { |a| a.password.blank? }
+  
   validates :email, :uniqueness => true, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
 
   def self.find_for_database_authentication(warden_conditions)
