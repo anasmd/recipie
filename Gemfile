@@ -26,7 +26,9 @@ gem "rmagick", "~> 2.13.1"
 gem "acts_as_commentable", "~> 3.0.1"
 gem 'acts_as_rateable', :git => 'git://github.com/mreinsch/acts_as_rateable.git'
 gem 'acts-as-taggable-on', '~> 2.2.2'
+gem 'thinking-sphinx', '2.0.10'
 group :development do
+	gem "bullet"  
   gem "execjs"
   gem "therubyracer"
 end

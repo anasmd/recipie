@@ -1,12 +1,12 @@
 class RecipesController < ApplicationController
   before_filter :authenticate_user!
   def index
-    @recipes = Recipe.find(:all, :include => [:ingredients, :image])
+    @recipes = Recipe.includes(:ingredients, :image)
   end
   
   def show
     @recipe = Recipe.find params[:id]
-    @comments = @recipe.comments.all
+    @comments = @recipe.comments.includes(:user)
     @comment = Comment.new
   end
   
